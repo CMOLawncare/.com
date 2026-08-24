@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CMO | Lawn Care • Trash Can Cleaning • Car Wash</title>
+
+<style>
+:root{
+  --green:#18b95a;
+  --dark:#071b13;
+  --lime:#b7ff45;
+  --blue:#16a7ff;
+  --white:#fff;
+  --muted:#d8eee3;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#06150f;
+  color:white;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(6,21,15,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #204c39;
+}
+
+nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 20px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:1000;
+  color:var(--lime);
+  letter-spacing:2px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:800;
+}
+
+.hero{
+  min-height:78vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:70px 20px;
+  background:
+    radial-gradient(circle at 50% 20%,#17683f 0,#09291c 35%,#06150f 75%);
+}
+
+.badge{
+  display:inline-block;
+  background:var(--lime);
+  color:#071b13;
+  padding:9px 15px;
+  border-radius:999px;
+  font-weight:1000;
+}
+
+.hero h1{
+  font-size:clamp(50px,10vw,100px);
+  margin:18px 0 5px;
+  line-height:.9;
+}
+
+.hero h1 span{
+  color:var(--lime);
+}
+
+.hero p{
+  font-size:21px;
+  color:var(--muted);
+  max-width:720px;
+  margin:20px auto;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 22px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+}
+
+.primary{
+  background:var(--lime);
+  color:#071b13;
+}
+
+.secondary{
+  border:2px solid #65d99a;
+  color:white;
+}
+
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+h2{
+  text-align:center;
+  font-size:42px;
+  margin:0 0 12px;
+}
+
+.sub{
+  text-align:center;
+  color:var(--muted);
+  margin:0 auto 35px;
+  max-width:650px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:linear-gradient(145deg,#0d2b1e,#092016);
+  border:1px solid #24573f;
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 15px 35px #0005;
+}
+
+.icon{
+  font-size:48px;
+}
+
+.card h3{
+  font-size:25px;
+  margin:10px 0;
+}
+
+.price{
+  font-size:30px;
+  font-weight:1000;
+  color:var(--lime);
+}
+
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.highlight{
+  background:linear-gradient(100deg,#0f6f40,#0878a8);
+  border-radius:28px;
+  padding:38px;
+  text-align:center;
+}
+
+.highlight h2{
+  font-size:38px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.step{
+  padding:22px;
+  border-radius:18px;
+  background:#0c2419;
+}
+
+.num{
+  font-size:34px;
+  color:var(--lime);
+  font-weight:1000;
+}
+
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.contactbox{
+  background:#0b2419;
+  border:1px solid #24573f;
+  border-radius:22px;
+  padding:28px;
+}
+
+.phone{
+  display:block;
+  color:var(--lime);
+  font-size:25px;
+  font-weight:1000;
+  text-decoration:none;
+  margin:12px 0;
+}
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  border-top:1px solid #204c39;
+  color:#9bc5b0;
+}
+
+@media(max-width:750px){
+
+  .grid,
+  .steps,
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  nav a{
+    display:none;
+  }
+
+  .hero{
+    min-height:70vh;
+  }
+
+  h2{
+    font-size:34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">CMO ⚡</div>
+
+<div>
+<a href="#services">Services</a>
+<a href="#how">How It Works</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+</header>
+
+<main>
+
+<section class="hero">
+
+<div>
+
+<div class="badge">
+MICHAEL + MASON • LOCAL SERVICE
+</div>
+
+<h1>
+CMO<br>
+<span>GET IT CLEAN.</span>
+</h1>
+
+<p>
+Lawn care, trash can cleaning, and car washing —
+done by Michael & Mason with pride, energy,
+and attention to detail.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="#contact">
+📲 Book a Service
+</a>
+
+<a class="btn secondary" href="#services">
+🔥 See Services
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="services">
+
+<h2>What We Do 🧼</h2>
+
+<p class="sub">
+Simple neighborhood services that make your home,
+cans, lawn, and ride look way better.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">🌱</div>
+
+<h3>Lawn Care</h3>
+
+<p>
+Mowing, edging, trimming, cleanup,
+and making your yard look fresh.
+</p>
+
+<div class="price">
+Starting at $20
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🗑️</div>
+
+<h3>Trash Can Cleaning</h3>
+
+<p>
+We clean and freshen your trash cans
+so they don't stay nasty after pickup day.
+</p>
+
+<div class="price">
+Starting at $10
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🚗</div>
+
+<h3>Car Washing</h3>
+
+<p>
+Exterior wash and cleanup to get your
+car looking clean and ready to roll.
+</p>
+
+<div class="price">
+Starting at $15
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="highlight">
+
+<h2>
+Bundle & Save 🔥
+</h2>
+
+<p>
+Need more than one service?
+Ask Michael or Mason about a custom
+neighborhood bundle.
+</p>
+
+<a class="btn primary" href="#contact">
+Get a Quote
+</a>
+
+</div>
+
+</section>
+
+
+<section id="how">
+
+<h2>
+How It Works
+</h2>
+
+<p class="sub">
+No complicated booking process.
+Just hit us up.
+</p>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="num">01</div>
+
+<h3>Contact CMO</h3>
+
+<p>
+Call Michael or Mason and tell us
+what you need.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="num">02</div>
+
+<h3>Pick a Time</h3>
+
+<p>
+We'll work out a time that fits
+both sides.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="num">03</div>
+
+<h3>We Get It Done</h3>
+
+<p>
+We show up, do the job,
+and leave it looking better.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<h2>
+Ready to Get Started? 📲
+</h2>
+
+<p class="sub">
+CMO is founded by Michael & Mason.
+Reach out for pricing and scheduling.
+</p>
+
+<div class="contact">
+
+<div class="contactbox">
+
+<h3>Michael</h3>
+
+<a class="phone" href="tel:7325750303">
+732-575-0303
+</a>
+
+<p>
+Call or text Michael for service
+questions and scheduling.
+</p>
+
+</div>
+
+
+<div class="contactbox">
+
+<h3>Mason</h3>
+
+<a class="phone" href="tel:6099012860">
+609-901-2860
+</a>
+
+<p>
+Call or text Mason for service
+questions and scheduling.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+© 2026 CMO • Michael & Mason
+• Lawn Care • Trash Can Cleaning • Car Washing
+
+</footer>
+
+</body>
+</html>
