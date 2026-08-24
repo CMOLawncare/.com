@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CMO | Lawn Care • Trash Can Cleaning • Car Wash</title>
+
+<style>
+:root {
+  --green: #19a957;
+  --green-dark: #087a3d;
+  --lime: #b9ff45;
+  --orange: #ff7100;
+  --blue: #2474e8;
+  --yellow: #ffd02f;
+  --dark: #0b0f0d;
+  --card: #121915;
+  --cream: #f8f5e9;
+  --text: #f5f7f4;
+  --muted: #aeb8b1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--dark);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11,15,13,.82);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 1000;
+  letter-spacing: -2px;
+}
+
+.logo span {
+  color: var(--lime);
+}
+
+.navlinks {
+  display: flex;
+  gap: 8px;
+}
+
+.navlinks a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.navlinks a:hover {
+  background: var(--lime);
+  color: #101510;
+}
+
+.nav-call {
+  background: var(--lime) !important;
+  color: #101510 !important;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 150px 7% 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(25,169,87,.28), transparent 35%),
+    radial-gradient(circle at 10% 80%, rgba(185,255,69,.10), transparent 30%),
+    var(--dark);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--green);
+  filter: blur(150px);
+  opacity: .13;
+  right: -200px;
+  top: 150px;
+}
+
+.hero-content {
+  max-width: 850px;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(185,255,69,.12);
+  border: 1px solid rgba(185,255,69,.35);
+  color: var(--lime);
+  padding: 10px 17px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 11vw, 110px);
+  line-height: .9;
+  letter-spacing: -6px;
+  font-weight: 1000;
+}
+
+.hero h1 span {
+  color: var(--lime);
+}
+
+.hero p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(19px, 3vw, 25px);
+  line-height: 1.5;
+  margin: 30px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 17px 25px;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 17px;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--lime);
+  color: #0b100d;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* STATS */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 55px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 30px;
+  color: var(--lime);
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* SERVICES */
+
+.services {
+  padding: 100px 6%;
+  background: #0e1310;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 55px;
+}
+
+.section-heading .small {
+  color: var(--lime);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  font-size: clamp(42px, 7vw, 70px);
+  letter-spacing: -3px;
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.service-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  border-radius: 30px;
+  padding: 35px;
+  min-height: 530px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.lawn-card {
+  background: linear-gradient(145deg, #209a4b, #09652e);
+}
+
+.trash-card {
+  background: linear-gradient(145deg, #ff7900, #c94f00);
+}
+
+.car-card {
+  background: linear-gradient(145deg, #2879ed, #174da5);
+}
+
+.service-number {
+  font-size: 70px;
+  font-weight: 1000;
+  opacity: .45;
+}
+
+.service-card h3 {
+  font-size: 42px;
+  line-height: .95;
+  margin: 15px 0;
+}
+
+.service-card p {
+  color: rgba(255,255,255,.82);
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.tag {
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.prices {
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.price-line span:first-child {
+  font-weight: 700;
+}
+
+.price-line strong {
+  font-size: 25px;
+  color: var(--lime);
+}
+
+/* WHY CMO */
+
+.why {
+  padding: 110px 6%;
+  background: var(--cream);
+  color: #151914;
+}
+
+.why-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.why h2 {
+  font-size: clamp(42px, 7vw, 70px);
+  line-height: .95;
+  letter-spacing: -3px;
+}
+
+.why h2 span {
+  color: var(--green-dark);
+}
+
+.why p {
+  color: #686e68;
+  line-height: 1.6;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.reasons {
+  display: grid;
+  gap: 15px;
+}
+
+.reason {
+  padding: 22px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.reason strong {
+  font-size: 19px;
+}
+
+.reason p {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 100px 6%;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(25,169,87,.25), transparent 50%),
+    var(--dark);
+}
+
+.contact h2 {
+  font-size: clamp(45px, 8vw, 80px);
+  letter-spacing: -4px;
+}
+
+.contact p {
+  color: var(--muted);
+  font-size: 19px;
+  margin: 20px auto 35px;
+}
+
+.phone-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.phone {
+  text-decoration: none;
+  padding: 18px 28px;
+  border-radius: 50px;
+  background: var(--lime);
+  color: #101510;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 30px 6%;
+  background: #060806;
+  text-align: center;
+  color: #727b74;
+  font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+  .navlinks a:not(.nav-call) {
+    display: none;
+  }
+
+  .hero {
+    padding: 130px 25px 80px;
+  }
+
+  .hero h1 {
+    letter-spacing: -4px;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 500px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services,
+  .why,
+  .contact {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="logo">CMO<span>.</span></div>
+
+  <div class="navlinks">
+    <a href="#services">Services</a>
+    <a href="#why">Why CMO</a>
+    <a href="#contact" class="nav-call">Call Us</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">🏠 LOCAL • RELIABLE • AFFORDABLE</div>
+
+    <h1>
+      Your neighborhood.<br>
+      <span>Our work.</span>
+    </h1>
+
+    <p>
+      CMO keeps your property looking clean, fresh, and taken care of —
+      from the lawn to the trash cans to your driveway.
+    </p>
+
+    <div class="buttons">
+      <a href="#services" class="btn btn-primary">
+        See Our Services ↓
+      </a>
+
+      <a href="tel:7325750303" class="btn btn-secondary">
+        📞 Call CMO
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>$10</strong>
+        <span>Lawn starting price</span>
+      </div>
+
+      <div class="stat">
+        <strong>$15</strong>
+        <span>Trash can cleaning</span>
+      </div>
+
+      <div class="stat">
+        <strong>$10</strong>
+        <span>Car wash starting price</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="section-heading">
+    <div class="small">What We Do</div>
+
+    <h2>Three services.<br>One CMO.</h2>
+
+    <p>
+      Simple pricing, quality work, and service right in your neighborhood.
+    </p>
+  </div>
+
+
+  <div class="service-grid">
+
+    <!-- LAWN -->
+
+    <div class="service-card lawn-card">
+
+      <div class="service-number">01</div>
+
+      <h3>Lawn<br>Care</h3>
+
+      <p>
+        Mowed, edged, trimmed, and blown clean every visit.
+        Keep your lawn looking sharp without doing the work yourself.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Mowing</span>
+        <span class="tag">Edge + trim</span>
+        <span class="tag">Blow-off</span>
+        <span class="tag">Weekly</span>
+      </div>
+
+      <div class="prices">
+
+        <div class="price-line">
+          <span>Weekly Plan</span>
+          <strong>$10</strong>
+        </div>
+
+        <div class="price-line">
+          <span>Bi-Weekly</span>
+          <strong>$25</strong>
+        </div>
+
+        <div class="price-line">
+          <span>Season Starter</span>
+          <strong>$119</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- TRASH -->
+
+    <div class="service-card trash-card">
+
+      <div class="service-number">02</div>
+
+      <h3>Trash Can<br>Cleaning</h3>
+
+      <p>
+        Pressure washed, scrubbed, deodorized, rinsed, and dried.
+        No slime. No mystery residue. Just clean cans.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Pressure wash</span>
+        <span class="tag">Degrease</span>
+        <span class="tag">Rinse + dry</span>
+        <span class="tag">Pickup day</span>
+      </div>
+
+      <div class="prices">
+
+        <div class="price-line">
+          <span>3-Can Set</span>
+          <strong>$30</strong>
+        </div>
+
+        <div class="price-line">
+          <span>5-Can Set</span>
+          <strong>$40</strong>
+        </div>
+
+        <div class="price-line">
+          <span>Single Can</span>
+          <strong>$15</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CAR -->
+
+    <div class="service-card car-card">
+
+      <div class="service-number">03</div>
+
+      <h3>Car<br>Wash</h3>
+
+      <p>
+        Hand wash, tire shine, and a spot-free rinse.
+        We come to your driveway — you don't have to move.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Hand wash</span>
+        <span class="tag">Tire + wheel</span>
+        <span class="tag">Interior</span>
+        <span class="tag">Mobile</span>
+      </div>
+
+      <div class="prices">
+
+        <div class="price-line">
+          <span>Full Wash</span>
+          <strong>$20</strong>
+        </div>
+
+        <div class="price-line">
+          <span>Spot Wash</span>
+          <strong>$10</strong>
+        </div>
+
+        <div class="price-line">
+          <span>Detail</span>
+          <strong>$30</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHY CMO -->
+
+<section class="why" id="why">
+
+  <div class="why-grid">
+
+    <div>
+      <h2>
+        Why choose<br>
+        <span>CMO?</span>
+      </h2>
+
+      <p>
+        We're not some huge company that sends a random worker
+        to your house. We're local, we're affordable, and we care
+        about making the work look good.
+      </p>
+    </div>
+
+    <div class="reasons">
+
+      <div class="reason">
+        <strong>💰 Fair prices</strong>
+        <p>Affordable neighborhood pricing without cutting corners.</p>
+      </div>
+
+      <div class="reason">
+        <strong>🏠 Local service</strong>
+        <p>We focus on serving our local neighborhood.</p>
+      </div>
+
+      <div class="reason">
+        <strong>✨ Quality work</strong>
+        <p>We want every job to look better when we're finished.</p>
+      </div>
+
+      <div class="reason">
+        <strong>📱 Easy to reach</strong>
+        <p>Call or text us directly to ask questions or book.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <h2>Let's get to work.</h2>
+
+  <p>
+    Ready to get your lawn, cans, or car looking better?
+    Give CMO a call.
+  </p>
+
+  <div class="phone-buttons">
+
+    <a class="phone" href="tel:7325750303">
+      📞 732-575-0303
+    </a>
+
+    <a class="phone" href="tel:6099012860">
+      📞 609-901-2860
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 CMO • Lawn Care • Trash Can Cleaning • Car Wash
+</footer>
+
+</body>
+</html>
