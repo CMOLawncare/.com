@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CMO | Lawn Care • Trash Can Cleaning • Car Wash</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #191713;
+  color: white;
+}
+
+/* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #191713;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 2px solid #ffcc32;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+nav a:hover {
+  background: #ffcc32;
+  color: #191713;
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  padding: 70px 5% 80px;
+  position: relative;
+}
+
+.lawn {
+  background: #299b48;
+}
+
+.trash {
+  background: #ff7200;
+}
+
+.car {
+  background: #286fd8;
+}
+
+/* HEADINGS */
+.number {
+  color: #ffcc32;
+  font-size: clamp(90px, 18vw, 150px);
+  font-weight: 900;
+  line-height: .8;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.section h1 {
+  font-size: clamp(48px, 10vw, 86px);
+  font-weight: 900;
+  display: inline-block;
+  line-height: .95;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.trash .number {
+  color: #171512;
+}
+
+.car .number {
+  color: #ffd02f;
+}
+
+.description {
+  max-width: 800px;
+  margin-top: 55px;
+  font-size: clamp(20px, 4vw, 32px);
+  line-height: 1.55;
+  color: rgba(255,255,255,.9);
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.tag {
+  border: 2px solid rgba(255,255,255,.35);
+  border-radius: 50px;
+  padding: 13px 25px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* PRICE BOX */
+.price-box {
+  margin-top: 80px;
+  max-width: 900px;
+  border-radius: 35px;
+  padding: 40px 50px;
+}
+
+.lawn .price-box,
+.car .price-box {
+  background: #f7f3e8;
+  color: #1b1915;
+  border: 4px solid #171512;
+}
+
+.trash .price-box {
+  background: #191713;
+  color: white;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 2px solid rgba(80,80,80,.25);
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-title {
+  font-size: 25px;
+  font-weight: 800;
+  color: #77756e;
+}
+
+.trash .price-title {
+  color: #aaa79e;
+}
+
+.price-sub {
+  margin-top: 10px;
+  font-size: 19px;
+  color: #929088;
+}
+
+.price {
+  font-size: clamp(45px, 8vw, 70px);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.trash .price {
+  color: #ffcc32;
+}
+
+/* CONTACT BAR */
+.contact {
+  background: #191713;
+  border-top: 3px solid #ffcc32;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.phone {
+  text-decoration: none;
+  color: #191713;
+  background: #ffcc32;
+  padding: 18px 35px;
+  border-radius: 50px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.phone.second {
+  background: #f7f3e8;
+}
+
+.phone:hover {
+  transform: scale(1.04);
+}
+
+/* TOP LABEL */
+.service-label {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .75;
+  margin-bottom: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  nav a {
+    white-space: nowrap;
+  }
+
+  .section {
+    padding: 60px 30px 70px;
+  }
+
+  .number {
+    font-size: 90px;
+    margin-right: 8px;
+  }
+
+  .section h1 {
+    font-size: 50px;
+  }
+
+  .description {
+    margin-top: 45px;
+    font-size: 22px;
+  }
+
+  .tags {
+    gap: 12px;
+  }
+
+  .tag {
+    font-size: 16px;
+    padding: 11px 18px;
+  }
+
+  .price-box {
+    margin-top: 60px;
+    padding: 25px 25px;
+    border-radius: 28px;
+  }
+
+  .price-row {
+    padding: 25px 0;
+  }
+
+  .price-title {
+    font-size: 18px;
+  }
+
+  .price-sub {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 42px;
+  }
+
+  .phone {
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#lawn">01 Lawn Care</a>
+  <a href="#trash">02 Trash Cans</a>
+  <a href="#car">03 Car Wash</a>
+</nav>
+
+
+<!-- ================= LAWN CARE ================= -->
+
+<section class="section lawn" id="lawn">
+
+  <div class="service-label">CMO Services</div>
+
+  <span class="number">01</span>
+  <h1>Lawn Care</h1>
+
+  <p class="description">
+    Mowed to crisp, alternating stripes. Edged, trimmed,
+    and blown clean every single visit — the kind of lawn
+    the neighbors lean out for.
+  </p>
+
+  <div class="tags">
+    <span class="tag">Mowing</span>
+    <span class="tag">Edge + trim</span>
+    <span class="tag">Blow-off</span>
+    <span class="tag">Weekly</span>
+  </div>
+
+  <div class="price-box">
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">WEEKLY PLAN</div>
+        <div class="price-sub">front or back per visit</div>
+      </div>
+      <div class="price">$10</div>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">BI-WEEKLY</div>
+        <div class="price-sub">per visit</div>
+      </div>
+      <div class="price">$25</div>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">SEASON STARTER</div>
+        <div class="price-sub">one-time</div>
+      </div>
+      <div class="price">$119</div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="contact">
+  <a class="phone" href="tel:7325750303">732-575-0303</a>
+  <a class="phone second" href="tel:6099012860">609-901-2860</a>
+</div>
+
+
+<!-- ================= TRASH CAN CLEANING ================= -->
+
+<section class="section trash" id="trash">
+
+  <div class="service-label">CMO Services</div>
+
+  <span class="number">02</span>
+  <h1>Trash Can<br>Cleaning</h1>
+
+  <p class="description">
+    Pressured, scrubbed, deodorized, and left gleaming.
+    No smell, no slime, no mystery residue — just cans
+    that squeak when they're dry.
+  </p>
+
+  <div class="tags">
+    <span class="tag">Pressure wash</span>
+    <span class="tag">Degrease</span>
+    <span class="tag">Rinse + dry</span>
+    <span class="tag">On pickup day</span>
+  </div>
+
+  <div class="price-box">
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">3-CAN SET</div>
+        <div class="price-sub">per visit</div>
+      </div>
+      <div class="price">$30</div>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">5-CAN SET</div>
+        <div class="price-sub">per visit</div>
+      </div>
+      <div class="price">$40</div>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">SINGLE CAN</div>
+        <div class="price-sub">per visit</div>
+      </div>
+      <div class="price">$15</div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="contact">
+  <a class="phone" href="tel:7325750303">732-575-0303</a>
+  <a class="phone second" href="tel:6099012860">609-901-2860</a>
+</div>
+
+
+<!-- ================= CAR WASH ================= -->
+
+<section class="section car" id="car">
+
+  <div class="service-label">CMO Services</div>
+
+  <span class="number">03</span>
+  <h1>Car Wash</h1>
+
+  <p class="description">
+    Hand wash, tire shine, and a spot-free rinse that leaves
+    the paint beaded and bright. We come to your driveway —
+    you don't move.
+  </p>
+
+  <div class="tags">
+    <span class="tag">Hand wash</span>
+    <span class="tag">Tire + wheel</span>
+    <span class="tag">Interior detail</span>
+    <span class="tag">Mobile</span>
+  </div>
+
+  <div class="price-box">
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">FULL WASH</div>
+        <div class="price-sub">exterior + tires</div>
+      </div>
+      <div class="price">$20</div>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">SPOT WASH</div>
+        <div class="price-sub">exterior only</div>
+      </div>
+      <div class="price">$10</div>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <div class="price-title">DETAIL</div>
+        <div class="price-sub">exterior + interior</div>
+      </div>
+      <div class="price">$30</div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="contact">
+  <a class="phone" href="tel:7325750303">732-575-0303</a>
+  <a class="phone second" href="tel:6099012860">609-901-2860</a>
+</div>
+
+</body>
+</html>
