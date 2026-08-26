@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CMO | Local Lawn Care & More</title>
+
+<style>
+:root{
+  --blue:#168cff;
+  --blue-light:#55bcff;
+  --black:#05070a;
+  --card:#101821;
+  --white:#fff;
+  --gray:#9ca9b5;
+  --border:rgba(255,255,255,.10);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+header{
+  padding:35px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--border);
+}
+
+.logo{
+  font-size:52px;
+  font-weight:900;
+  letter-spacing:-3px;
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.call-btn{
+  background:var(--blue);
+  padding:18px 28px;
+  border-radius:40px;
+  font-size:20px;
+  font-weight:800;
+}
+
+section{
+  width:90%;
+  max-width:1100px;
+  margin:90px auto;
+}
+
+.section-label{
+  color:var(--blue-light);
+  font-weight:800;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:clamp(55px,9vw,100px);
+  line-height:.95;
+  letter-spacing:-5px;
+  margin-bottom:25px;
+}
+
+h2{
+  font-size:clamp(40px,6vw,70px);
+  line-height:1;
+  margin-bottom:25px;
+}
+
+.subtitle{
+  color:var(--gray);
+  font-size:23px;
+  max-width:750px;
+}
+
+.services{
+  display:grid;
+  gap:35px;
+}
+
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:35px;
+  padding:45px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.service-number{
+  color:#17324d;
+  font-size:90px;
+  font-weight:900;
+  float:right;
+  line-height:.7;
+}
+
+.service-card h2{
+  font-size:52px;
+}
+
+.service-card p{
+  color:var(--gray);
+  font-size:20px;
+  margin-bottom:30px;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:25px 0;
+  border-top:1px solid var(--border);
+}
+
+.price-name{
+  font-size:25px;
+  font-weight:800;
+}
+
+.price-description{
+  display:block;
+  color:var(--gray);
+  font-size:17px;
+  font-weight:400;
+  margin-top:5px;
+}
+
+.price{
+  color:var(--blue-light);
+  font-size:34px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.each{
+  color:var(--gray);
+  font-size:18px;
+  font-weight:700;
+}
+
+.price-note{
+  margin-top:30px;
+  padding-top:25px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:var(--gray);
+  font-size:19px;
+}
+
+.price-note .heart{
+  font-size:27px;
+  margin-right:5px;
+}
+
+.photo-card{
+  margin-top:30px;
+  overflow:hidden;
+  border-radius:25px;
+  border:1px solid var(--border);
+}
+
+.photo-card img{
+  width:100%;
+  display:block;
+  max-height:500px;
+  object-fit:cover;
+}
+
+.story{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:35px;
+  padding:50px;
+}
+
+.story p{
+  color:var(--gray);
+  font-size:20px;
+  margin-top:20px;
+}
+
+.qr-section{
+  text-align:center;
+}
+
+.qr-box{
+  background:white;
+  padding:35px;
+  border-radius:35px;
+  margin:40px auto;
+  max-width:650px;
+}
+
+.qr-box img{
+  width:100%;
+  max-width:500px;
+  display:block;
+  margin:auto;
+}
+
+.qr-title{
+  color:#05070a;
+  font-size:40px;
+  font-weight:900;
+  margin-bottom:5px;
+}
+
+.qr-text{
+  color:#555;
+  font-size:20px;
+}
+
+.cta{
+  text-align:center;
+  padding:100px 20px;
+}
+
+.cta h2{
+  font-size:70px;
+}
+
+.cta p{
+  color:var(--gray);
+  font-size:22px;
+  margin-bottom:30px;
+}
+
+footer{
+  text-align:center;
+  padding:50px 20px;
+  color:var(--gray);
+  border-top:1px solid var(--border);
+}
+
+@media(max-width:650px){
+
+  header{
+    padding:25px 6%;
+  }
+
+  .logo{
+    font-size:40px;
+  }
+
+  .call-btn{
+    padding:14px 18px;
+    font-size:16px;
+  }
+
+  section{
+    width:92%;
+    margin:65px auto;
+  }
+
+  .service-card{
+    padding:30px 25px;
+  }
+
+  .service-card h2{
+    font-size:42px;
+  }
+
+  .service-number{
+    font-size:65px;
+  }
+
+  .price-row{
+    align-items:flex-start;
+  }
+
+  .price-name{
+    font-size:21px;
+  }
+
+  .price{
+    font-size:28px;
+  }
+
+  .cta h2{
+    font-size:50px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">CMO<span>.</span></div>
+
+  <a class="call-btn" href="tel:YOUR_PHONE_NUMBER">
+    📞 Call CMO
+  </a>
+</header>
+
+
+<!-- HERO -->
+<section>
+  <div class="section-label">LOCAL • RELIABLE • NEIGHBORHOOD</div>
+
+  <h1>
+    We take care<br>
+    of the work.
+  </h1>
+
+  <p class="subtitle">
+    Reliable lawn care, trash can cleaning, and mobile car cleaning
+    right here in the neighborhood.
+  </p>
+</section>
+
+
+<!-- OUR SERVICES -->
+<section id="services">
+
+  <div class="section-label">OUR SERVICES</div>
+
+  <h2>What we do.</h2>
+
+  <p class="subtitle">
+    Simple services. Clear prices. No confusing fees.
+  </p>
+
+
+  <div class="services">
+
+
+    <!-- LAWN CARE -->
+    <div class="service-card">
+
+      <div class="service-number">01</div>
+
+      <h2>🌱 Lawn Care</h2>
+
+      <p>
+        Reliable lawn care for your home and your neighborhood.
+      </p>
+
+
+      <div class="price-row">
+        <div class="price-name">
+          Weekly Lawn
+          <span class="price-description">
+            Lawn service every week
+          </span>
+        </div>
+
+        <div class="price">
+          $20 total
+          <div class="each">$10 each</div>
+        </div>
+      </div>
+
+
+      <div class="price-row">
+        <div class="price-name">
+          Every 2 Weeks
+          <span class="price-description">
+            Lawn service every two weeks
+          </span>
+        </div>
+
+        <div class="price">
+          $30 total
+          <div class="each">$15 each</div>
+        </div>
+      </div>
+
+
+      <div class="price-row">
+        <div class="price-name">
+          Season Starter
+          <span class="price-description">
+            Seasonal lawn service
+          </span>
+        </div>
+
+        <div class="price">
+          $120 total
+          <div class="each">$60 each</div>
+        </div>
+      </div>
+
+
+      <div class="price-note">
+        <span class="heart">💙</span>
+        Prices shown are the customer total.
+        The “each” amount is the 50/50 split.
+      </div>
+
+    </div>
+
+
+
+    <!-- TRASH CANS -->
+    <div class="service-card">
+
+      <div class="service-number">02</div>
+
+      <h2>🗑️ Trash Can Cleaning</h2>
+
+      <p>
+        We clean and freshen up your trash cans right at your home.
+      </p>
+
+
+      <div class="price-row">
+        <div class="price-name">
+          1 Trash Can
+        </div>
+
+        <div class="price">
+          $10 total
+          <div class="each">$5 each</div>
+        </div>
+      </div>
+
+
+      <div class="price-row">
+        <div class="price-name">
+          3 Trash Cans
+        </div>
+
+        <div class="price">
+          $30 total
+          <div class="each">$15 each</div>
+        </div>
+      </div>
+
+
+      <div class="price-row">
+        <div class="price-name">
+          5 Trash Cans
+        </div>
+
+        <div class="price">
+          $40 total
+          <div class="each">$20 each</div>
+        </div>
+      </div>
+
+
+      <div class="price-note">
+        <span class="heart">💙</span>
+        Prices shown are the customer total.
+        The “each” amount is the 50/50 split.
+      </div>
+
+    </div>
+
+
+
+    <!-- CAR WASH -->
+    <div class="service-card">
+
+      <div class="service-number">03</div>
+
+      <h2>🚗 Car Wash</h2>
+
+      <p>
+        Choose exactly what you need. Every option is priced
+        separately per car.
+      </p>
+
+
+      <div class="price-row">
+
+        <div class="price-name">
+          Full Car Clean
+
+          <span class="price-description">
+            Clean the outside + interior
+          </span>
+        </div>
+
+        <div class="price">
+          $24 total
+          <div class="each">$12 each</div>
+        </div>
+
+      </div>
+
+
+      <div class="price-row">
+
+        <div class="price-name">
+          Exterior Only
+
+          <span class="price-description">
+            Clean the outside of the car only
+          </span>
+        </div>
+
+        <div class="price">
+          $16 total
+          <div class="each">$8 each</div>
+        </div>
+
+      </div>
+
+
+      <div class="price-row">
+
+        <div class="price-name">
+          Interior Only
+
+          <span class="price-description">
+            Clean the interior of the car only
+          </span>
+        </div>
+
+        <div class="price">
+          $10 total
+          <div class="each">$5 each</div>
+        </div>
+
+      </div>
+
+
+      <div class="price-note">
+        <span class="heart">💙</span>
+        Prices shown are the customer total.
+        The “each” amount is the 50/50 split.
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- FRONTIER LANE -->
+<section>
+
+  <div class="section-label">YOUR LOCAL AREA</div>
+
+  <h2>Serving <strong>Frontier Lane</strong> and the neighborhood.</h2>
+
+  <p class="subtitle">
+    CMO provides reliable lawn care, trash can cleaning,
+    and mobile car washes right here in the neighborhood.
+  </p>
+
+  <div class="photo-card">
+    <img
+      src="FFA65674-299E-4F01-A6F0-91777A3D3EAE.png"
+      alt="Frontier Lane street sign">
+  </div>
+
+</section>
+
+
+
+<!-- OUR STORY -->
+<section>
+
+  <div class="story">
+
+    <div class="section-label">OUR STORY</div>
+
+    <h2>
+      Just two neighborhood kids
+      <br>
+      <span>building something of our own.</span>
+    </h2>
+
+    <p>
+      CMO was started by two neighborhood kids who wanted
+      to build a real business, make money, and provide
+      useful services for people right around us.
+    </p>
+
+    <p>
+      We're learning how to work hard, take care of customers,
+      and grow something we're proud of — one job at a time.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- QR CODE -->
+<section class="qr-section">
+
+  <div class="section-label">SAVE OUR WEBSITE</div>
+
+  <h2>Scan. Visit. CMO.</h2>
+
+  <p class="subtitle" style="margin:auto;">
+    Scan the QR code to visit our website anytime.
+  </p>
+
+
+  <div class="qr-box">
+
+    <div class="qr-title">
+      CMO Lawn Care
+    </div>
+
+    <div class="qr-text">
+      Scan to visit our website.
+    </div>
+
+    <img
+      src="IMG_4278.jpeg"
+      alt="CMO website QR code">
+
+  </div>
+
+</section>
+
+
+
+<!-- CTA -->
+<section class="cta">
+
+  <h2>
+    Ready to get<br>
+    started?
+  </h2>
+
+  <p>
+    Call or message CMO today.
+  </p>
+
+  <a class="call-btn" href="tel:YOUR_PHONE_NUMBER">
+    📞 Call CMO
+  </a>
+
+</section>
+
+
+
+<footer>
+  © CMO Lawn Care • Local. Reliable. Neighborhood.
+</footer>
+
+</body>
+</html>
